@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hvordan vinne anbud – Kurs og bok | nyttanbud.no</title>
+  <meta name="description" content="Lær å vinne offentlige anbud. Kurs og fagbok av Robert Myhre – rådgiver i Veritas Procurement, tidl. KOFA-sekretariatsleder, 25+ års erfaring.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2744;
+      --navy-light: #243352;
+      --gold: #c9a84c;
+      --gold-hover: #b8953d;
+      --cream: #f8f6f1;
+      --white: #ffffff;
+      --text: #2d3748;
+      --text-light: #64748b;
+      --green: #16a34a;
+      --red: #dc2626;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    /* ─── NAV ─── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(26, 39, 68, 0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 64px;
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; color: var(--white);
+      text-decoration: none; font-weight: 700;
+    }
+    .nav-brand span { color: var(--gold); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.8); text-decoration: none;
+      font-size: 0.9rem; font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold); color: var(--navy) !important;
+      padding: 8px 20px; border-radius: 6px; font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--gold-hover); }
+    .hamburger {
+      display: none; background: none; border: none; cursor: pointer;
+      flex-direction: column; gap: 5px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px; background: var(--white);
+      transition: 0.3s;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 140px 24px 100px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -50%; right: -20%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,0.15); color: var(--gold);
+      padding: 6px 16px; border-radius: 20px;
+      font-size: 0.85rem; font-weight: 600; margin-bottom: 20px;
+    }
+    .hero-badge .dot {
+      width: 8px; height: 8px; background: var(--green);
+      border-radius: 50%; animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem; line-height: 1.1;
+      color: var(--white); margin-bottom: 20px;
+    }
+    .hero h1 em {
+      color: var(--gold); font-style: italic;
+    }
+    .hero-sub {
+      font-size: 1.2rem; color: rgba(255,255,255,0.75);
+      margin-bottom: 36px; max-width: 480px;
+    }
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 8px;
+      font-size: 1rem; font-weight: 600; text-decoration: none;
+      transition: all 0.2s; cursor: pointer; border: none;
+    }
+    .btn-gold { background: var(--gold); color: var(--navy); }
+    .btn-gold:hover { background: var(--gold-hover); transform: translateY(-1px); box-shadow: 0 4px 20px rgba(201,168,76,0.4); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-stats {
+      display: flex; gap: 32px; margin-top: 48px;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; color: var(--gold); font-weight: 800;
+    }
+    .hero-stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+    .hero-visual {
+      display: flex; justify-content: center; align-items: center;
+    }
+    .book-mockup {
+      position: relative;
+      width: 340px;
+      transform: perspective(800px) rotateY(-6deg);
+      transition: transform 0.4s;
+    }
+    .book-mockup:hover { transform: perspective(800px) rotateY(-2deg); }
+    .book-mockup img {
+      width: 100%; height: auto; border-radius: 4px;
+      box-shadow: -20px 20px 60px rgba(0,0,0,0.4);
+    }
+
+    /* ─── KURS HERO IMAGE ─── */
+    .kurs-hero-img {
+      width: 100%; border-radius: 16px; overflow: hidden;
+      margin-bottom: 48px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .kurs-hero-img img {
+      width: 100%; height: 320px; object-fit: cover; display: block;
+    }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 80px 24px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      color: var(--gold); font-size: 0.85rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem; margin-bottom: 16px; color: var(--navy);
+    }
+    .section-desc {
+      font-size: 1.1rem; color: var(--text-light);
+      max-width: 640px; margin-bottom: 48px;
+    }
+
+    /* ─── PROBLEM/AGITATION ─── */
+    .problem { background: var(--cream); }
+    .problem-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .problem-card {
+      background: var(--white); padding: 32px; border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .problem-icon {
+      font-size: 1.5rem; margin-bottom: 12px;
+    }
+    .problem-card h3 {
+      font-size: 1.1rem; margin-bottom: 8px; color: var(--navy);
+    }
+    .problem-card p { font-size: 0.95rem; color: var(--text-light); }
+
+    /* ─── KURS ─── */
+    .kurs { background: var(--white); }
+    .kurs-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      margin-bottom: 48px;
+    }
+    .kurs-card {
+      background: var(--cream); padding: 28px; border-radius: 12px;
+      border-left: 4px solid var(--gold);
+    }
+    .kurs-card h3 {
+      font-size: 1rem; color: var(--navy); margin-bottom: 8px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .kurs-card p { font-size: 0.9rem; color: var(--text-light); }
+
+    .kurs-meta {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+      background: var(--navy); border-radius: 16px; padding: 36px;
+      text-align: center;
+    }
+    .kurs-meta-item h4 {
+      color: var(--gold); font-size: 1rem; margin-bottom: 4px;
+    }
+    .kurs-meta-item p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+    /* ─── FORFATTER ─── */
+    .author-section { background: var(--cream); }
+    .author-grid {
+      display: grid; grid-template-columns: 280px 1fr; gap: 48px;
+      align-items: start;
+    }
+    .author-photo {
+      width: 280px; height: 340px;
+      border-radius: 16px; overflow: hidden;
+    }
+    .author-photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top;
+    }
+    .author-creds {
+      display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;
+    }
+    .cred-tag {
+      background: rgba(201,168,76,0.12); color: var(--navy);
+      padding: 6px 14px; border-radius: 20px; font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* ─── BOK ─── */
+    .bok { background: var(--white); }
+    .bok-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+      align-items: center;
+    }
+    .bok-features { list-style: none; }
+    .bok-features li {
+      padding: 12px 0;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex; align-items: baseline; gap: 12px;
+      font-size: 0.95rem;
+    }
+    .bok-features li::before {
+      content: '✓'; color: var(--gold); font-weight: 700; font-size: 1.1rem;
+    }
+    .bok-price-box {
+      background: var(--cream); border-radius: 16px; padding: 36px;
+      text-align: center; border: 2px solid var(--gold);
+    }
+    .bok-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; color: var(--navy); margin-bottom: 8px;
+    }
+    .bok-price-note { color: var(--text-light); font-size: 0.9rem; margin-bottom: 24px; }
+
+    /* ─── TESTIMONIAL ─── */
+    .testimonial {
+      background: var(--navy);
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .testimonial blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; color: var(--white);
+      max-width: 800px; margin: 0 auto 20px;
+      line-height: 1.5; font-style: italic;
+    }
+    .testimonial cite {
+      color: var(--gold); font-style: normal; font-size: 0.95rem;
+    }
+
+    /* ─── PÅMELDING ─── */
+    .signup { background: var(--cream); }
+    .signup-box {
+      max-width: 680px; margin: 0 auto;
+      background: var(--white); border-radius: 16px;
+      padding: 48px; box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+    }
+    .signup-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; color: var(--navy); margin-bottom: 8px;
+      text-align: center;
+    }
+    .signup-price-tag {
+      text-align: center; margin-bottom: 32px;
+    }
+    .signup-price-tag .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; color: var(--gold); font-weight: 800;
+    }
+    .signup-price-tag .note {
+      font-size: 0.85rem; color: var(--text-light);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block; font-size: 0.85rem; font-weight: 600;
+      color: var(--navy); margin-bottom: 4px;
+    }
+    .form-group input, .form-group select {
+      width: 100%; padding: 12px 14px; border: 1px solid #d1d5db;
+      border-radius: 8px; font-size: 0.95rem; font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus {
+      outline: none; border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+    }
+    .required { color: var(--red); }
+    .checkbox-row {
+      display: flex; align-items: center; gap: 8px;
+      margin: 16px 0; font-size: 0.9rem;
+    }
+    .checkbox-row input { width: 18px; height: 18px; accent-color: var(--gold); }
+    .submit-btn {
+      width: 100%; padding: 16px; background: var(--gold);
+      color: var(--navy); font-size: 1.1rem; font-weight: 700;
+      border: none; border-radius: 8px; cursor: pointer;
+      transition: all 0.2s; margin-top: 8px;
+    }
+    .submit-btn:hover {
+      background: var(--gold-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+    }
+    .form-note {
+      text-align: center; font-size: 0.85rem;
+      color: var(--text-light); margin-top: 16px;
+    }
+    .form-success {
+      display: none; text-align: center; padding: 40px 20px;
+    }
+    .form-success.show { display: block; }
+    .form-success h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; color: var(--navy); margin-bottom: 12px;
+    }
+    .form-success p { color: var(--text-light); }
+
+    /* ─── BOK BESTILLING ─── */
+    .order { background: var(--white); }
+    .order-box {
+      max-width: 680px; margin: 0 auto;
+      background: var(--cream); border-radius: 16px;
+      padding: 48px; border: 2px solid var(--gold);
+    }
+    .order-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; color: var(--navy); margin-bottom: 8px;
+      text-align: center;
+    }
+    .order-price-tag {
+      text-align: center; margin-bottom: 32px;
+    }
+    .order-price-tag .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; color: var(--gold); font-weight: 800;
+    }
+    .order-price-tag .note {
+      font-size: 0.85rem; color: var(--text-light);
+    }
+    .order-success {
+      display: none; text-align: center; padding: 40px 20px;
+    }
+    .order-success.show { display: block; }
+    .order-success h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; color: var(--navy); margin-bottom: 12px;
+    }
+
+    /* ─── FAQ ─── */
+    .faq { background: var(--cream); }
+    .faq-list { max-width: 720px; }
+    .faq-item {
+      background: var(--white); border-radius: 10px;
+      margin-bottom: 12px; overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    .faq-q {
+      padding: 20px 24px; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      font-weight: 600; font-size: 0.95rem; color: var(--navy);
+      user-select: none;
+    }
+    .faq-q::after { content: '+'; font-size: 1.4rem; color: var(--gold); transition: transform 0.3s; }
+    .faq-item.open .faq-q::after { content: '−'; }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+    }
+    .faq-a-inner {
+      padding: 0 24px 20px;
+      font-size: 0.9rem; color: var(--text-light); line-height: 1.7;
+    }
+    .faq-item.open .faq-a { max-height: 300px; }
+
+    /* ─── CTA BANNER ─── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 80px 24px; text-align: center;
+    }
+    .cta-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem; color: var(--white); margin-bottom: 16px;
+    }
+    .cta-banner p {
+      font-size: 1.1rem; color: rgba(255,255,255,0.7);
+      margin-bottom: 32px; max-width: 540px; margin-left: auto; margin-right: auto;
+    }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy); padding: 40px 24px;
+      text-align: center; color: rgba(255,255,255,0.5);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 900px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none; position: absolute; top: 64px; left: 0; right: 0;
+        background: var(--navy); flex-direction: column;
+        padding: 20px 24px; gap: 16px;
+      }
+      .nav-links.open { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-buttons { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-visual { margin-top: 40px; }
+      .book-mockup { width: 240px; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .kurs-grid { grid-template-columns: 1fr; }
+      .kurs-meta { grid-template-columns: 1fr 1fr; }
+      .author-grid { grid-template-columns: 1fr; }
+      .author-photo { width: 100%; max-width: 280px; margin: 0 auto; }
+      .bok-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .section-title { font-size: 1.8rem; }
+    }
+
+    /* ─── FADE IN ─── */
+    .fade-in {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── STICKY BOTTOM BAR ─── */
+    .sticky-bar {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      background: var(--navy); padding: 12px 24px; z-index: 90;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+    .sticky-bar-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .sticky-bar p { color: var(--white); font-size: 0.95rem; font-weight: 500; }
+    .sticky-bar .price { color: var(--gold); font-weight: 700; }
+    @media (min-width: 600px) {
+      .sticky-bar.show { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">nytt<span>anbud</span>.no</a>
+      <button class="hamburger" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#kurs">Kurset</a></li>
+        <li><a href="#bok">Boken</a></li>
+        <li><a href="#forfatter">Om Robert</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#pamelding" class="nav-cta">Meld deg på →</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Neste kurs: 2. juni 2026 · Live webinar
+        </div>
+        <h1>Hvordan <em>vinne</em> anbud</h1>
+        <p class="hero-sub">Slutt å bare delta i anbudskonkurranser. Lær taktikken, jussen og strategien som skiller vinnerne fra resten.</p>
+        <div class="hero-buttons">
+          <a href="#pamelding" class="btn btn-gold">Meld deg på kurset →</a>
+          <a href="#bok" class="btn btn-outline">Bestill boken</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">600+</div>
+            <div class="hero-stat-label">Mrd. i offentlige<br>anskaffelser årlig</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">25+</div>
+            <div class="hero-stat-label">År erfaring<br>hos kursleder</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">1000+</div>
+            <div class="hero-stat-label">Anbudssaker<br>gjennomgått</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="book-mockup">
+          <img src="images/bok-forside.jpg" alt="Hvordan vinne anbud – bok av Robert Myhre">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="section-inner">
+      <div class="section-label">Kjenner du deg igjen?</div>
+      <h2 class="section-title">Du taper anbud du burde vinne</h2>
+      <p class="section-desc">Ikke fordi du mangler kompetanse – men fordi du ikke forstår spillereglene godt nok.</p>
+      <div class="problem-grid">
+        <div class="problem-card fade-in">
+          <div class="problem-icon">😤</div>
+          <h3>Skriver gode tilbud – men scorer lavt</h3>
+          <p>Du beskriver hva dere kan, men forstår ikke hva oppdragsgiver faktisk evaluerer. Adjektiver gir ikke poeng.</p>
+        </div>
+        <div class="problem-card fade-in">
+          <div class="problem-icon">💸</div>
+          <h3>Priser feil – og taper på det</h3>
+          <p>Du er enten for dyr og taper, eller for billig og ødelegger marginen. Taktisk prissetting er en ferdighet.</p>
+        </div>
+        <div class="problem-card fade-in">
+          <div class="problem-icon">🤷</div>
+          <h3>Vet ikke hva som skjedde</h3>
+          <p>Du får avslag uten å forstå hvorfor. Evalueringsmodellene er en svart boks – men det trenger de ikke være.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KURSINNHOLD -->
+  <section class="kurs" id="kurs">
+    <div class="section-inner">
+      <div class="section-label">Kursinnhold</div>
+      <h2 class="section-title">Hva du lærer på 3 timer</h2>
+      <p class="section-desc">Fra frustrasjon til fortrinn – konkrete strategier for å øke vinnersjansene dine i anbudskonkurranser.</p>
+      <div class="kurs-hero-img fade-in">
+        <img src="images/kurs-bilde.jpg" alt="Robert Myhre underviser i evalueringsmodeller for offentlige anbud">
+      </div>
+      <div class="kurs-grid">
+        <div class="kurs-card fade-in">
+          <h3>📋 Kravspesifikasjonen dekonstruert</h3>
+          <p>Metodikk for å analysere, forstå og besvare krav presist og målrettet. Forstå hva oppdragsgiver egentlig etterspør.</p>
+        </div>
+        <div class="kurs-card fade-in">
+          <h3>🏆 Kvalitetspoeng som konkurransefortrinn</h3>
+          <p>Dokumentere og konkretisere kvalitet på en måte som scorer høyt. Unngå «adjektiv-fellen» – skriv verdi, ikke egenskaper.</p>
+        </div>
+        <div class="kurs-card fade-in">
+          <h3>💰 Strategisk prising</h3>
+          <p>Balansere konkurransekraft og lønnsomhet gjennom taktisk prissetting og forståelse av evalueringsmodeller.</p>
+        </div>
+        <div class="kurs-card fade-in">
+          <h3>🤝 Samarbeidsmodeller</h3>
+          <p>Joint ventures, konsortier og underleverandørløsninger: juridiske rammer og strategiske muligheter.</p>
+        </div>
+        <div class="kurs-card fade-in">
+          <h3>🔢 Evalueringsmodeller avmystifisert</h3>
+          <p>Forstå hvordan poengmodeller faktisk fungerer og hvordan du optimaliserer tilbudet ditt for å score maksimalt.</p>
+        </div>
+        <div class="kurs-card fade-in">
+          <h3>👤 CV-er som selger</h3>
+          <p>Utforme kompetansepresentasjoner som matcher tildelingskriteriene perfekt. Gjør CV-en til en «produktkatalog».</p>
+        </div>
+      </div>
+      <div class="kurs-meta fade-in">
+        <div class="kurs-meta-item">
+          <h4>Format</h4>
+          <p>Live webinar</p>
+        </div>
+        <div class="kurs-meta-item">
+          <h4>Varighet</h4>
+          <p>3 timer</p>
+        </div>
+        <div class="kurs-meta-item">
+          <h4>Tidspunkt</h4>
+          <p>09:00 – 12:00</p>
+        </div>
+        <div class="kurs-meta-item">
+          <h4>Pris</h4>
+          <p>Kr 4 900,-</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORFATTER -->
+  <section class="author-section" id="forfatter">
+    <div class="section-inner">
+      <div class="section-label">Kursleder og forfatter</div>
+      <h2 class="section-title">Robert Myhre</h2>
+      <div class="author-grid">
+        <div>
+          <div class="author-photo">
+            <img src="images/robert-myhre.jpg" alt="Robert Myhre – kursleder og forfatter">
+          </div>
+        </div>
+        <div>
+          <p style="font-size:1.05rem; margin-bottom:16px;">Over 25 års erfaring fra alle sider av bordet i offentlige anskaffelser. Rådgiver i Veritas Procurement og kursleder i Forum for offentlige anskaffelser.</p>
+          <p style="color: var(--text-light); margin-bottom:12px;">Robert var med på å utarbeide anskaffelsesforskriften i Nærings- og handelsdepartementet, etablerte sekretariatet for Klagenemnda for offentlige anskaffelser (KOFA), og praktiserte som advokat i 20 år (til 2024).</p>
+          <p style="color: var(--text-light); margin-bottom:24px;">Denne unike bakgrunnen – fra regelverksutformer til klagenemnd til praktiserende advokat til rådgiver – gir kursdeltakere og lesere tilgang til innsikt som sjelden er tilgjengelig for leverandører.</p>
+          <div class="author-creds">
+            <span class="cred-tag">📜 Utformet anskaffelsesforskriften</span>
+            <span class="cred-tag">⚖️ Sekretariatsleder i KOFA</span>
+            <span class="cred-tag">👔 Advokat i 20 år (til 2024)</span>
+            <span class="cred-tag">💼 Rådgiver i Veritas Procurement</span>
+            <span class="cred-tag">📊 1000+ anbudssaker</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <div class="section-inner">
+      <blockquote>«Et nærmere 400 siders dyptpløyende oppslagsverk som for veldig mange praktikere bør være et must.»</blockquote>
+      <cite>— Lennart Hovland, Anbud365</cite>
+    </div>
+  </section>
+
+  <!-- BOK -->
+  <section class="bok" id="bok">
+    <div class="section-inner">
+      <div class="section-label">Fagboken</div>
+      <h2 class="section-title">Hvordan vinne anbud</h2>
+      <p class="section-desc">Taktikk, juss og kommersiell strategi. 253 sider med praktiske verktøy for hele anbudsprosessen.</p>
+      <div class="bok-grid">
+        <div>
+          <ul class="bok-features">
+            <li>Posisjonering før utlysning gjennom lovlig markedsdialog</li>
+            <li>Strategisk prising med opsjoner og taktisk «frontloading»</li>
+            <li>Det nye miljøkravet og 30-prosentregelen for klima og miljø</li>
+            <li>Kvalifikasjon og fallgruver – ESPD og dokumentasjon</li>
+            <li>Klageprosessen og innsyn i konkurrenters tilbud</li>
+            <li>Evalueringsmodeller forklart fra innsiden</li>
+          </ul>
+        </div>
+        <div class="bok-price-box fade-in">
+          <div class="bok-price">1 490,-</div>
+          <div class="bok-price-note">253 sider · Pluss porto</div>
+          <a href="#bestill" class="btn btn-gold" style="width:100%; justify-content:center;">Bestill boken →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PÅMELDING KURS -->
+  <section class="signup" id="pamelding">
+    <div class="section-inner">
+      <div class="signup-box">
+        <h3>Meld deg på kurset</h3>
+        <div class="signup-price-tag">
+          <div class="price">4 900,-</div>
+          <div class="note">Inkl. kursbevis og kursmateriell · Ikke mva. på kurs</div>
+        </div>
+        <form id="kursForm" name="kurs-pamelding" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="kurs-pamelding">
+          <input type="hidden" name="antall-deltakere" id="hiddenCount" value="1">
+          <input type="hidden" name="total-pris" id="hiddenPrice" value="4 900,-">
+          <p style="display:none"><label>Ikke fyll ut: <input name="bot-field"></label></p>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Kontaktperson – Navn <span class="required">*</span></label>
+              <input type="text" name="kontakt-navn" required placeholder="Fullt navn">
+            </div>
+            <div class="form-group">
+              <label>E-post <span class="required">*</span></label>
+              <input type="email" name="kontakt-epost" required placeholder="din@epost.no">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Organisasjon / Arbeidsgiver <span class="required">*</span></label>
+              <input type="text" name="organisasjon" required placeholder="Bedriftsnavn">
+            </div>
+            <div class="form-group">
+              <label>Fakturareferanse <span class="required">*</span></label>
+              <input type="text" name="faktura-ref" required placeholder="PO-nr. eller referanse">
+            </div>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="contactIsParticipant" name="kontakt-er-deltaker" checked>
+            <label for="contactIsParticipant">Kontaktpersonen er selv deltaker</label>
+          </div>
+
+          <div id="extraParticipants" style="margin-top:16px;">
+            <h4 id="extraHeading" style="font-size:0.9rem; color:var(--navy); margin-bottom:12px; display:none;">Ekstra deltakere</h4>
+            <div id="participantsList"></div>
+            <button type="button" onclick="addParticipant()" style="background:none; border:1px dashed var(--gold); color:var(--gold); padding:10px 20px; border-radius:8px; cursor:pointer; font-weight:600; font-size:0.9rem; width:100%; margin-top:8px;">
+              + Legg til deltaker
+            </button>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px; padding:16px; background:var(--cream); border-radius:8px; margin-bottom:16px;">
+            <span style="font-size:0.9rem; color:var(--text-light);"><span id="participantCount">1</span> deltaker(e) · Kursmateriell og kursbevis inkludert</span>
+            <span style="font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--navy); font-weight:700;" id="totalPrice">4 900,-</span>
+          </div>
+
+          <button type="submit" class="submit-btn">Send påmelding →</button>
+          <p class="form-note">Du mottar bekreftelse på e-post innen én virkedag. Faktura tilsendes.</p>
+        </form>
+        <div class="form-success" id="kursSuccess">
+          <div style="font-size:3rem; margin-bottom:16px;">✅</div>
+          <h3>Påmelding mottatt!</h3>
+          <p>Takk for din påmelding til Hvordan vinne anbud.<br>Du mottar bekreftelse og faktura på e-post innen én virkedag.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BESTILL BOK -->
+  <section class="order" id="bestill">
+    <div class="section-inner">
+      <div class="order-box">
+        <h3>Bestill boken</h3>
+        <div class="order-price-tag">
+          <div class="price">1 490,-</div>
+          <div class="note">253 sider · Pluss porto</div>
+        </div>
+        <form id="bokForm" name="bok-bestilling" method="POST" data-netlify="true" netlify-honeypot="bot-field-bok">
+          <input type="hidden" name="form-name" value="bok-bestilling">
+          <p style="display:none"><label>Ikke fyll ut: <input name="bot-field-bok"></label></p>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Navn <span class="required">*</span></label>
+              <input type="text" name="bok-navn" required placeholder="Fullt navn">
+            </div>
+            <div class="form-group">
+              <label>E-post <span class="required">*</span></label>
+              <input type="email" name="bok-epost" required placeholder="din@epost.no">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Leveringsadresse <span class="required">*</span></label>
+            <input type="text" name="bok-adresse" required placeholder="Gate, postnr. og sted">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Organisasjon (valgfritt)</label>
+              <input type="text" name="bok-org" placeholder="Bedriftsnavn">
+            </div>
+            <div class="form-group">
+              <label>Antall eksemplarer</label>
+              <select name="bok-antall" id="bokAntall">
+                <option value="1">1 stk</option>
+                <option value="2">2 stk</option>
+                <option value="3">3 stk</option>
+                <option value="5">5 stk</option>
+                <option value="10">10 stk</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="submit-btn" style="background:var(--navy); color:var(--white);">Bestill boken →</button>
+          <p class="form-note">Du mottar ordrebekreftelse og faktura på e-post.</p>
+        </form>
+        <div class="order-success" id="bokSuccess">
+          <div style="font-size:3rem; margin-bottom:16px;">📚</div>
+          <h3>Bestilling mottatt!</h3>
+          <p>Takk for din bestilling. Du mottar bekreftelse og faktura på e-post.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="section-inner">
+      <div class="section-label">Ofte stilte spørsmål</div>
+      <h2 class="section-title">Har du spørsmål?</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">Hvem passer kurset for?</div>
+          <div class="faq-a"><div class="faq-a-inner">Kurset er laget for deg som selger varer eller tjenester til det offentlige – enten du er ny i markedet eller har erfaring men ønsker å vinne flere kontrakter. Typiske deltakere er daglige ledere, salgsansvarlige, anbudskoordinatorer og konsulenter.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Trenger jeg forkunnskaper?</div>
+          <div class="faq-a"><div class="faq-a-inner">Nei. Kurset dekker alt fra grunnleggende forståelse av anbudsprosessen til avanserte strategier. Du får mest ut av det om du har deltatt i minst én anbudskonkurranse tidligere, men det er ikke et krav.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Hva er forskjellen på kurset og boken?</div>
+          <div class="faq-a"><div class="faq-a-inner">Boken er et omfattende oppslagsverk på 253 sider som dekker hele anbudsprosessen i dybden. Kurset er et kompakt 3-timers live webinar der du får direkte dialog med Robert Myhre og kan stille spørsmål. Mange velger begge deler – boken som referanseverk og kurset for den interaktive læringen.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Får jeg opptak av webinaret?</div>
+          <div class="faq-a"><div class="faq-a-inner">Kurset er en live-sesjon uten forhåndsinnspilte videoer. Kontakt oss på kurs@forumoa.no for spørsmål om tilgang etter kurset.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Kan flere fra samme bedrift delta?</div>
+          <div class="faq-a"><div class="faq-a-inner">Ja, du kan legge til flere deltakere i påmeldingsskjemaet. Alle får eget kursbevis og kursmateriell. Prisen er kr 4 900,- per deltaker.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Hvordan betaler jeg?</div>
+          <div class="faq-a"><div class="faq-a-inner">Faktura tilsendes etter påmelding/bestilling. Det er ikke mva. på kurs.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <h2>Klar for å vinne flere anbud?</h2>
+    <p>Investér i din bedrifts konkurransekraft. Neste kurs: 2. juni 2026.</p>
+    <div class="cta-buttons">
+      <a href="#pamelding" class="btn btn-gold">Meld deg på kurset – 4 900,- →</a>
+      <a href="#bestill" class="btn btn-outline">Bestill boken – 1 490,- →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Forum for offentlige anskaffelser AS · Org.nr. 933 432 394</p>
+    <p style="margin-top:8px;"><a href="mailto:kurs@forumoa.no">kurs@forumoa.no</a> · <a href="tel:+4792054415">920 54 415</a></p>
+    <p style="margin-top:16px; font-size:0.75rem;">© 2026 nyttanbud.no</p>
+  </footer>
+
+  <!-- STICKY BAR -->
+  <div class="sticky-bar" id="stickyBar">
+    <div class="sticky-bar-inner">
+      <p>Neste kurs: <strong>2. juni 2026</strong> · <span class="price">Kr 4 900,-</span></p>
+      <a href="#pamelding" class="btn btn-gold" style="padding:10px 24px; font-size:0.9rem;">Meld deg på →</a>
+    </div>
+  </div>
+
+  <script>
+    // ── Participant logic ──
+    const pricePerPerson = 4900;
+    let extraCount = 0;
+
+    function getTotalParticipants() {
+      const contactChecked = document.getElementById('contactIsParticipant').checked;
+      const extras = document.querySelectorAll('.extra-participant').length;
+      return (contactChecked ? 1 : 0) + extras;
+    }
+
+    function updateSummary() {
+      const total = getTotalParticipants();
+      document.getElementById('participantCount').textContent = total;
+      const price = total * pricePerPerson;
+      document.getElementById('totalPrice').textContent = price.toLocaleString('nb-NO') + ',-';
+      document.getElementById('extraHeading').style.display =
+        document.querySelectorAll('.extra-participant').length > 0 ? '' : 'none';
+    }
+
+    function addParticipant() {
+      extraCount++;
+      const div = document.createElement('div');
+      div.className = 'extra-participant';
+      div.style.cssText = 'background:var(--cream);padding:16px;border-radius:8px;margin-bottom:8px;';
+      div.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <strong style="font-size:0.85rem;color:var(--navy);">Deltaker ${extraCount}</strong>
+          <button type="button" onclick="this.closest('.extra-participant').remove();updateSummary();" style="background:none;border:none;color:var(--red);cursor:pointer;font-size:0.9rem;">✕ Fjern</button>
+        </div>
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom:0">
+            <input type="text" placeholder="Fullt navn" required>
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <input type="email" placeholder="E-postadresse" required>
+          </div>
+        </div>`;
+      document.getElementById('participantsList').appendChild(div);
+      updateSummary();
+    }
+
+    document.getElementById('contactIsParticipant').addEventListener('change', updateSummary);
+
+    // ── Form submissions (Netlify Forms via AJAX) ──
+    document.getElementById('kursForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (getTotalParticipants() === 0) {
+        alert('Legg til minst én deltaker.');
+        return;
+      }
+      // Update hidden fields before submit
+      document.getElementById('hiddenCount').value = getTotalParticipants();
+      document.getElementById('hiddenPrice').value = document.getElementById('totalPrice').textContent;
+
+      const form = this;
+      const formData = new FormData(form);
+      const submitBtn = form.querySelector('.submit-btn');
+      submitBtn.textContent = 'Sender...';
+      submitBtn.disabled = true;
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(response => {
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('kursSuccess').classList.add('show');
+        } else {
+          throw new Error('Nettverksfeil');
+        }
+      })
+      .catch(error => {
+        submitBtn.textContent = 'Send påmelding →';
+        submitBtn.disabled = false;
+        alert('Noe gikk galt. Prøv igjen eller kontakt oss på kurs@forumoa.no');
+      });
+    });
+
+    document.getElementById('bokForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      const formData = new FormData(form);
+      const submitBtn = form.querySelector('.submit-btn');
+      submitBtn.textContent = 'Sender...';
+      submitBtn.disabled = true;
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(response => {
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('bokSuccess').classList.add('show');
+        } else {
+          throw new Error('Nettverksfeil');
+        }
+      })
+      .catch(error => {
+        submitBtn.textContent = 'Bestill boken →';
+        submitBtn.disabled = false;
+        alert('Noe gikk galt. Prøv igjen eller kontakt oss på kurs@forumoa.no');
+      });
+    });
+
+    // ── FAQ toggle ──
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('open');
+      });
+    });
+
+    // ── Fade-in on scroll ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ── Sticky bar ──
+    const hero = document.querySelector('.hero');
+    const stickyBar = document.getElementById('stickyBar');
+    const stickyObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        stickyBar.classList.toggle('show', !entry.isIntersecting);
+      });
+    });
+    stickyObs.observe(hero);
+
+    // ── Hamburger ──
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
