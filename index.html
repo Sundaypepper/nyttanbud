@@ -13,7 +13,7 @@
     :root {
       --navy: #1a2744;
       --navy-light: #243352;
-      --gold: #c9a84c
+      --gold: #c9a84c;
       --gold-hover: #b8953d;
       --cream: #f8f6f1;
       --white: #ffffff;
@@ -532,7 +532,7 @@
       </div>
       <div class="hero-visual">
         <div class="book-mockup">
-          <img src="images/bok-forside.jpg" alt="Hvordan vinne anbud – bok av Robert Myhre">
+          <img src="bilder/bok-forside.jpg" alt="Hvordan vinne anbud – bok av Robert Myhre">
         </div>
       </div>
     </div>
@@ -571,7 +571,7 @@
       <h2 class="section-title">Hva du lærer på 3 timer</h2>
       <p class="section-desc">Fra frustrasjon til fortrinn – konkrete strategier for å øke vinnersjansene dine i anbudskonkurranser.</p>
       <div class="kurs-hero-img fade-in">
-        <img src="images/kurs-bilde.jpg" alt="Robert Myhre underviser i evalueringsmodeller for offentlige anbud">
+        <img src="bilder/kurs-bilde.jpg" alt="Robert Myhre underviser i evalueringsmodeller for offentlige anbud">
       </div>
       <div class="kurs-grid">
         <div class="kurs-card fade-in">
@@ -628,7 +628,7 @@
       <div class="author-grid">
         <div>
           <div class="author-photo">
-            <img src="images/robert-myhre.jpg" alt="Robert Myhre – kursleder og forfatter">
+            <img src="bilder/robert-myhre.jpg" alt="Robert Myhre – kursleder og forfatter">
           </div>
         </div>
         <div>
@@ -690,11 +690,14 @@
           <div class="price">4 900,-</div>
           <div class="note">Inkl. kursbevis og kursmateriell · Ikke mva. på kurs</div>
         </div>
-        <form id="kursForm" name="kurs-pamelding" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="kurs-pamelding">
+        <form id="kursForm" action="https://formsubmit.co/kurs@forumoa.no" method="POST">
+          <input type="hidden" name="_subject" value="Ny kurspåmelding – Hvordan vinne anbud">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://nyttanbud.no/#pamelding-bekreftet">
           <input type="hidden" name="antall-deltakere" id="hiddenCount" value="1">
           <input type="hidden" name="total-pris" id="hiddenPrice" value="4 900,-">
-          <p style="display:none"><label>Ikke fyll ut: <input name="bot-field"></label></p>
+          <input type="text" name="_honey" style="display:none">
           <div class="form-row">
             <div class="form-group">
               <label>Kontaktperson – Navn <span class="required">*</span></label>
@@ -754,9 +757,12 @@
           <div class="price">1 490,-</div>
           <div class="note">253 sider · Pluss porto</div>
         </div>
-        <form id="bokForm" name="bok-bestilling" method="POST" data-netlify="true" netlify-honeypot="bot-field-bok">
-          <input type="hidden" name="form-name" value="bok-bestilling">
-          <p style="display:none"><label>Ikke fyll ut: <input name="bot-field-bok"></label></p>
+        <form id="bokForm" action="https://formsubmit.co/kurs@forumoa.no" method="POST">
+          <input type="hidden" name="_subject" value="Ny bokbestilling – Hvordan vinne anbud">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://nyttanbud.no/#bestilling-bekreftet">
+          <input type="text" name="_honey" style="display:none">
           <div class="form-row">
             <div class="form-group">
               <label>Navn <span class="required">*</span></label>
@@ -902,7 +908,7 @@
 
     document.getElementById('contactIsParticipant').addEventListener('change', updateSummary);
 
-    // ── Form submissions (Netlify Forms via AJAX) ──
+    // ── Form submissions (FormSubmit.co via AJAX) ──
     document.getElementById('kursForm').addEventListener('submit', function(e) {
       e.preventDefault();
       if (getTotalParticipants() === 0) {
@@ -919,10 +925,10 @@
       submitBtn.textContent = 'Sender...';
       submitBtn.disabled = true;
 
-      fetch('/', {
+      fetch(form.action, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+        body: formData,
+        headers: { 'Accept': 'application/json' }
       })
       .then(response => {
         if (response.ok) {
@@ -947,10 +953,10 @@
       submitBtn.textContent = 'Sender...';
       submitBtn.disabled = true;
 
-      fetch('/', {
+      fetch(form.action, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+        body: formData,
+        headers: { 'Accept': 'application/json' }
       })
       .then(response => {
         if (response.ok) {
@@ -966,6 +972,16 @@
         alert('Noe gikk galt. Prøv igjen eller kontakt oss på kurs@forumoa.no');
       });
     });
+
+    // ── Show confirmation if returning from form submit ──
+    if (window.location.hash === '#pamelding-bekreftet') {
+      document.getElementById('kursForm').style.display = 'none';
+      document.getElementById('kursSuccess').classList.add('show');
+    }
+    if (window.location.hash === '#bestilling-bekreftet') {
+      document.getElementById('bokForm').style.display = 'none';
+      document.getElementById('bokSuccess').classList.add('show');
+    }
 
     // ── FAQ toggle ──
     document.querySelectorAll('.faq-q').forEach(q => {
